@@ -45,13 +45,13 @@
   }
 
   .category_Wrapper button {
-    width: 100%;            /* buttons take full width */
-    max-width: 300px;       /* but don’t get too wide */
+    width: 100%;            
+    max-width: 300px;      
     font-size: 0.9rem;
   }
 
   .product_wrapper {
-    flex-direction: column; /* stack products vertically */
+    flex-direction: column; 
     gap: 15px;
   }
 }
