@@ -12,12 +12,13 @@ function App() {
 
   const fetchCategories = async () => {
     try {
-      const res = await fetch('https://fakestoreapi.in/api/products/category')
+      const res = await fetch('https://fakestoreapi.com/products/categories')
       const data = await res.json();
-      if (data.status ==="SUCCESS"){
+   
 
-        setCategories(data.categories)
-      }
+        setCategories(data)
+        console.log(data)
+      
     }
     catch (err) {
       console.log("this is not working", err)
@@ -25,10 +26,11 @@ function App() {
   }
 
   const fetchProducts = async () => {
-    try{ const res = await fetch("https://fakestoreapi.in/api/products?limit=150")
+    try{ const res = await fetch("https://fakestoreapi.com/products")
        const data = await res.json()
-       setProducts(data.products)
-       setFilteredProducts(data.products)
+       setProducts(data)
+       setFilteredProducts(data)
+       console.log(data)
     }
     catch(err){
     console.log("this product not working",err)
@@ -54,8 +56,8 @@ setCategorySelected(category)
   }
   return (
     <>
-    {/* <Header/>
-    <Hero/> */}
+    <Header/>
+    <Hero/>
     <div className='category_Wrapper'>
        <button onClick={()=> handleCategory("all")}>Show all</button>
      
